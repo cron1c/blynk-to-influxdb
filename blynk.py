@@ -1,7 +1,10 @@
 #!/bin/python
+
+//please change INFLUXDBIP,DATABASENAME,IPADRESSBLYNK,ENTERATUHTOKEN
+
 from urllib2 import Request, urlopen
 from influxdb import InfluxDBClient
-client = InfluxDBClient(host='192.168.178.74', database='blynk')
+client = InfluxDBClient(host='INFLUXDBIP', database='DATABASENAME')
 while True:
     Pin = 0
     while Pin <  24:
@@ -9,7 +12,7 @@ while True:
         
             P = str(Pin)
             p = str(Pin)
-            request = Request('http://192.168.178.74:8080/abK9uJZW1fx0_CZwfu5mO1ml0B-U1DQj/get/V%s' % P)
+            request = Request('http://IPADRESSBLYNK:8080/ENTERAUTHTOKEN/get/V%s' % P)
             Pin += 1
             response_body = urlopen(request).read()
             response = response_body[2:-2]
