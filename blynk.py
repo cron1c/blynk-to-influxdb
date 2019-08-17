@@ -11,7 +11,6 @@ while True:
         try:
         
             P = str(Pin)
-            p = str(Pin)
             request = Request('http://IPADRESSBLYNK:8080/ENTERAUTHTOKEN/get/V%s' % P)
             Pin += 1
             response_body = urlopen(request).read()
